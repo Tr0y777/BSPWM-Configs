@@ -1,0 +1,52 @@
+# CREATE TERMINAL
+super + Return
+	urxvt
+
+# RELOAD SXHKD
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# QUIT/RESTART BSPWM
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# CLOSE/KILL WINDOW
+super + {_,shift + }w
+	bspc node -{c,k}
+
+# SET THE WINDOW STATE
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# SET THE NODE FLAGS
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# FOCUS THE NODE IN THE GIVEN DIRECTION
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# FOCUS OR SEND NODE TO THE GIVEN DESKTOP
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# PRESELECT THE DIRECTION
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# PRESELECT THE RATIO
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# CANCEL THE PRESELECTION
+super + ctrl + space
+	bspc node -p cancel
+
+# OPEN PROGRAMS
+super + shift + {i, n, a}
+	{firefox, \
+	thunar, \
+	"music player"}
+
+super + @x
+	dmenu_run
