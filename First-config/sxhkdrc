@@ -1,6 +1,6 @@
 # CREATE TERMINAL
 super + Return
-	urxvt
+	alacritty
 
 # RELOAD SXHKD
 super + Escape
@@ -48,5 +48,5 @@ super + shift + {i, n, a}
 	thunar, \
 	"music player"}
 
-super + @x
-	dmenu_run
+super + x
+	dmenu_run -nb '#f2f2f2' -nf '#2f343f' -sb '#2f343f' -sf '#f2f2f2' -y 12 -x 660 -z 600
