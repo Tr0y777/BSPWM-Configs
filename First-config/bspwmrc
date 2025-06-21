@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # STARTUP
+sxhkd &
 polybar example &
+picom &
 nitrogen --restore &
 pulseaudio &
 xsetroot -cursor_name left_ptr &
